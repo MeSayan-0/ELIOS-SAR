@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>ellios_sar_px4_bridge</name>
+  <version>1.0.0</version>
+  <description>ELLIOS-SAR GCS high-level command bridge to PX4 VehicleCommand.</description>
+  <maintainer email="dev@ellios-sar.local">ELLIOS-SAR</maintainer>
+  <license>MIT</license>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>px4_msgs</depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
