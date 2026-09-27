@@ -1,0 +1,231 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+
+  <world name="ellios_coal_mine">
+
+    <!-- ========================= -->
+    <!-- PHYSICS                   -->
+    <!-- ========================= -->
+
+    <physics name="mine_physics"
+             type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <!-- ========================= -->
+    <!-- GAZEBO SYSTEMS            -->
+    <!-- ========================= -->
+
+    <plugin filename="libgz-sim-physics-system.so"
+            name="gz::sim::systems::Physics"/>
+
+    <plugin filename="libgz-sim-user-commands-system.so"
+            name="gz::sim::systems::UserCommands"/>
+
+    <plugin filename="libgz-sim-scene-broadcaster-system.so"
+            name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="libgz-sim-sensors-system.so"
+            name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <!-- ========================= -->
+    <!-- LIGHT                     -->
+    <!-- ========================= -->
+
+    <light name="mine_light"
+           type="point">
+      <pose>0 0 3 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>30</range>
+        <linear>0.01</linear>
+        <constant>0.5</constant>
+        <quadratic>0.01</quadratic>
+      </attenuation>
+      <cast_shadows>true</cast_shadows>
+    </light>
+
+    <!-- ========================= -->
+    <!-- MINE FLOOR                -->
+    <!-- ========================= -->
+
+    <model name="mine_floor">
+      <static>true</static>
+
+      <link name="link">
+
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30 10 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 10 0.2</size>
+            </box>
+          </geometry>
+
+          <material>
+            <ambient>0.18 0.16 0.14 1</ambient>
+            <diffuse>0.25 0.23 0.20 1</diffuse>
+            <specular>0.05 0.05 0.05 1</specular>
+          </material>
+        </visual>
+
+      </link>
+    </model>
+
+    <!-- ========================= -->
+    <!-- MAIN TUNNEL LEFT WALL     -->
+    <!-- ========================= -->
+
+    <model name="main_left_wall">
+      <static>true</static>
+
+      <pose>0 2 1.5 0 0 0</pose>
+
+      <link name="link">
+
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 0.3 3</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 0.3 3</size>
+            </box>
+          </geometry>
+
+          <material>
+            <ambient>0.25 0.20 0.16 1</ambient>
+            <diffuse>0.35 0.28 0.22 1</diffuse>
+          </material>
+        </visual>
+
+      </link>
+    </model>
+
+    <!-- ========================= -->
+    <!-- MAIN TUNNEL RIGHT WALL    -->
+    <!-- ========================= -->
+
+    <model name="main_right_wall">
+      <static>true</static>
+
+      <pose>0 -2 1.5 0 0 0</pose>
+
+      <link name="link">
+
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 0.3 3</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 0.3 3</size>
+            </box>
+          </geometry>
+
+          <material>
+            <ambient>0.25 0.20 0.16 1</ambient>
+            <diffuse>0.35 0.28 0.22 1</diffuse>
+          </material>
+        </visual>
+
+      </link>
+    </model>
+
+    <!-- ========================= -->
+    <!-- TUNNEL END                -->
+    <!-- ========================= -->
+
+    <model name="main_tunnel_end">
+      <static>true</static>
+
+      <pose>10 0 1.5 0 0 0</pose>
+
+      <link name="link">
+
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.3 4.3 3</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 4.3 3</size>
+            </box>
+          </geometry>
+
+          <material>
+            <ambient>0.20 0.18 0.16 1</ambient>
+            <diffuse>0.30 0.27 0.23 1</diffuse>
+          </material>
+        </visual>
+
+      </link>
+    </model>
+
+    <!-- ========================= -->
+    <!-- ROOF                      -->
+    <!-- ========================= -->
+
+    <model name="mine_roof">
+      <static>true</static>
+
+      <pose>0 0 3.2 0 0 0</pose>
+
+      <link name="link">
+
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 4.3 0.3</size>
+            </box>
+          </geometry>
+        </collision>
+
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 4.3 0.3</size>
+            </box>
+          </geometry>
+
+          <material>
+            <ambient>0.12 0.10 0.08 1</ambient>
+            <diffuse>0.18 0.16 0.13 1</diffuse>
+          </material>
+        </visual>
+
+      </link>
+    </model>
+        <include>
+      <uri>model://ellios_rover</uri>
+      <name>ellios_rover</name>
+      <pose>2 0 0.35 0 0 0</pose>
+    </include>
+  </world>
+
+</sdf>

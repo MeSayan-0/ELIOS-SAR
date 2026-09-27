@@ -50,3 +50,7 @@ test_videos/*
 
 # Local Git history backup (never commit)
 .git-old-history/
+
+# Local ML model weights
+models/rgb/*.pt
+models/thermal/*.pt
