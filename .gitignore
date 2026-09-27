@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+venv*/
+env/
+
+# Node dependencies & builds
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ROS 2 build & install artifacts
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+*.egg-info/
+
+# Pytest and testing
+.pytest_cache/
+
+# Local environment and tooling
+.env
+.env.*
+.vscode/
+
+# Generated outputs & frames
+results/
+frames_*.gv
+frames_*.pdf
+
+# Local logs & backups
+*.log
+*.backup
+*.backup-*
+*.phase*
+*backup*
+.rover-integration-backup/
+
+# Test media
+test_images/*
+test_videos/*

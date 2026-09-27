@@ -1,0 +1,6 @@
+build/
+install/
+log/
+*.pdf
+*.gv
+.DS_Store

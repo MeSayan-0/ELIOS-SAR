@@ -1,0 +1,63 @@
+slam_toolbox:
+  ros__parameters:
+
+    # ==============================
+    # SLAM MODE
+    # ==============================
+    mode: mapping
+
+    # ==============================
+    # FRAMES
+    # ==============================
+    map_frame: map
+    odom_frame: odom
+    base_frame: base_link
+
+    # ==============================
+    # LASER SCAN
+    # ==============================
+    scan_topic: /rover/scan
+    use_scan_matching: true
+
+    # ==============================
+    # LASER RANGE
+    # ==============================
+    min_laser_range: 0.12
+    max_laser_range: 20.0
+    # ==============================
+    # MAP
+    # ==============================
+    resolution: 0.05
+
+    # ==============================
+    # TRANSFORM
+    # ==============================
+    transform_publish_period: 0.02
+    map_update_interval: 2.0
+
+    # ==============================
+    # SCAN PROCESSING
+    # ==============================
+    throttle_scans: 1
+    minimum_time_interval: 0.5
+
+    # ==============================
+    # LOOP CLOSURE
+    # ==============================
+    do_loop_closing: true
+
+    # ==============================
+    # SOLVER
+    # ==============================
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_loss_function: None
+
+    # ==============================
+    # GENERAL
+    # ==============================
+    debug_logging: false
+    enable_interactive_mode: true
+    use_response_expansion: true

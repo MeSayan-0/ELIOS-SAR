@@ -1,0 +1,16 @@
+# ELIOS-AprilTag Vision & Landing Target Bridge Dependencies
+# Python >= 3.10
+
+# Computer Vision & Image Processing
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# AprilTag Detection & Pose Estimation
+pupil-apriltags>=1.0.4
+
+# MAVLink Flight Controller Communication & Serial Interface
+pymavlink>=2.4.40
+pyserial>=3.5
+
+# Hardware-accelerated CRC checksums for MAVLink
+fastcrc>=0.5.0
