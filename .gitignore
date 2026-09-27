@@ -47,3 +47,7 @@ frames_*.pdf
 # Test media
 test_images/*
 test_videos/*
+
+# Large local recordings
+perception/recordings/mp4_replay.jsonl
+perception/recordings/webcam_replay.jsonl
