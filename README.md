@@ -37,3 +37,8 @@ python src/test_thermal.py
 ```
 
 Do not proceed to fusion until both checks and image tests succeed.
+
+
+<marquee behavior="scroll" direction="left" scrollamount="6">
+  <b>✨ THANK YOU FOR VISITING! ✨ SHARE YOUR FEEDBACK! ✨ DROP A STAR IF YOU LIKE IT! ✨ HAPPY CODING! ✨</b>
+</marquee>
